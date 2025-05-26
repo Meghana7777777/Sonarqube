@@ -4,38 +4,7 @@ pipeline {
         CI_PROJECT_DIR = "${WORKSPACE}"
         PATH = "${WORKSPACE}/node_modules/.bin:$PATH"
     }
-    stages {
-        stage('Replace .env with cps.env') {
-            steps {
-                sh '''
-                    cp -f documents/env/sq_qa/cps.env packages/services/cut-planning/.env
-                    cp -f documents/env/sq_qa/ets.env packages/services/emb-tracking/.env
-                    cp -f documents/env/sq_qa/oes.env packages/services/order-execution/.env
-                    cp -f documents/env/sq_qa/oms.env packages/services/order-management/.env
-                    cp -f documents/env/sq_qa/ums.env packages/services/unit-management/.env
-                    cp -f documents/env/sq_qa/wms.env packages/services/warehouse-management/.env
-                    cp -f documents/env/sq_qa/dms.env packages/services/dispatch-management/.env
-                    cp -f documents/env/sq_qa/sps.env packages/services/sewing-planning/.env
-                    cp -f documents/env/sq_qa/pms.env packages/services/packing-management/.env
-                    cp -f documents/env/sq_qa/pkdms.env packages/services/packing-dispatch-management/.env
-                    cp -f documents/env/sq_qa/qms.env packages/services/quality-management/.env
-                    cp -f documents/env/sq_qa/pts.env packages/services/production-tracking/.env
-                    cp -f documents/env/sq_qa/ins.env packages/services/inspection/.env
-                    cp -f documents/env/sq_qa/kms.env packages/services/knitting-management/.env
-                    cp -f documents/env/sq_qa/invs.env packages/services/inventory-management/.env
-                '''
-            }
-        }
-        stage('Replace config.ts') {
-            steps {
-                sh 'cp -f documents/env/sq_qa/shared-config.ts packages/libs/shared-services/src/config.ts'
-            }
-        }
-        stage('Replace environment.js') {
-            steps {
-                sh 'cp -f documents/env/sq_qa/environment.js packages/ui/src/assets/environment.js'
-            }
-        }
+    stages {  
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
