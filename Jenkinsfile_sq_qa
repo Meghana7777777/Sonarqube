@@ -20,6 +20,8 @@ pipeline {
                         -Dsonar.sources=packages \
                         -Dsonar.exclusions=**/node_modules/**,**/*.spec.ts,**/*.test.ts \
                         -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+                        -Dsonar.javascript.node.maxspace=4096
+                        -Dsonar.javascript.node.debugMemory=true
                     '''
                 }
             }
