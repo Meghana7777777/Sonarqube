@@ -4,6 +4,10 @@ pipeline {
         CI_PROJECT_DIR = "${WORKSPACE}"
         PATH = "${WORKSPACE}/node_modules/.bin:$PATH"
     }
+    tools {
+        // Use the name you gave to the SonarScanner installation in Jenkins
+        sonarScanner 'SonarScanner'
+    }
     stages {
         stage('Replace .env with cps.env') {
             steps {
@@ -41,6 +45,21 @@ pipeline {
                 sh 'npm install'
             }
         }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('Sonarqube') { // Replace with your actual SonarQube server name
+                    sh '''
+                        sonar-scanner \
+                        -Dsonar.projectKey=nodejs-project \
+                        -Dsonar.sources=packages \
+                        -Dsonar.exclusions=**/node_modules/**,**/*.spec.ts,**/*.test.ts \
+                        -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+                    '''
+                }
+            }
+        }
+
         stage('Build Backend') {
             steps {
                 sh '''
@@ -67,71 +86,6 @@ pipeline {
                     export PATH="$CI_PROJECT_DIR/node_modules/.bin:$PATH"
                     nx run ui:build --skip-nx-cache
                 '''
-            }
-        }
-        stage('Transfer Build Files') {
-            steps {
-                sshagent(credentials: ['2']) { // Use the correct credentials ID here
-                    sh '''
-                        ssh root@64.227.137.119 "rm -rf /var/www/html/sq-xpparel-qa_app/*"
-                        ssh root@64.227.137.119 "rm -rf /var/www/html/sq-xpparel-qa/dist/packages/services"
-                        scp -r $CI_PROJECT_DIR/dist/packages/ui/* root@64.227.137.119:/var/www/html/sq-xpparel-qa_app
-                        scp -r $CI_PROJECT_DIR/dist/packages/services root@64.227.137.119:/var/www/html/sq-xpparel-qa/dist/packages
-                    '''
-                }
-            }
-        }
-        stage('ReStart Services with PM2') {
-            steps {
-                sshagent(credentials: ['2']) { // Use the correct credentials ID here
-                    sh '''
-                        ssh root@64.227.137.119 <<EOF
-pm2 restart  all
-pm2 save
-EOF
-                    '''
-                }
-            }
-        }
-    }
-    post {
-        success {
-            script {
-                def startTime = currentBuild.getStartTimeInMillis()
-                def endTime = System.currentTimeMillis()
-                def duration = (endTime - startTime) / 1000
-
-                // Send success email
-                emailext(
-                    to: 'saikumarvardhi7799@gmail.com, rajud@schemaxtech.com, arunkumars@schemaxtech.com',
-                    subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                    body: """Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' was successful.
-Start Time: ${new Date(startTime)}
-End Time: ${new Date(endTime)}
-Duration: ${duration} seconds
-Check console output at ${env.BUILD_URL} to view the results."""
-                )
-            }
-        }
-        failure {
-            script {
-                def logFile = "${WORKSPACE}/log"
-                def logContent = ""
-                if (fileExists(logFile)) {
-                    logContent = readFile(logFile).take(1000)
-                } else {
-                    logContent = "Log file not found."
-                }
-
-                // Send failure email
-                emailext(
-                    to: 'saikumarvardhi7799@gmail.com, rajud@schemaxtech.com, arunkumars@schemaxtech.com',
-                    subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                    body: """Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' failed.
-Error Log:
-${logContent}
-Check console output at ${env.BUILD_URL} to view the results."""
-                )
             }
         }
     }
