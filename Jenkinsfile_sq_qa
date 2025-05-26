@@ -4,10 +4,6 @@ pipeline {
         CI_PROJECT_DIR = "${WORKSPACE}"
         PATH = "${WORKSPACE}/node_modules/.bin:$PATH"
     }
-    tools {
-        // Use the name you gave to the SonarScanner installation in Jenkins
-        sonarScanner 'SonarScanner'
-    }
     stages {
         stage('Replace .env with cps.env') {
             steps {
