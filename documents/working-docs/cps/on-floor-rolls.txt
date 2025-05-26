@@ -1,0 +1,35 @@
+entity: on_floor_rolls
+
+Q1: When do we populate data to on floor rolls?
+Ans: When we do the cut reporting, then after the cut reporting job is done, 
+    then we will trigger the 
+    job: CPS_PEN_ROLLS_TO_ONFLOOR with the 
+    function: releaseLockedRollsOfDocketToOnFloor() 
+    input: LayIdRequest
+
+
+Q2: What rolls are moved into the on floor rolls?
+Ans: All the rolls that were the part of the specific lay_id,
+    will be moved to the on floor rolls.
+    1. If the specific roll is not utilized in cut reporting, then the consumed qty for such rolls in the on-floor rolls will be 0 (i.e the roll is allocated but physically is not a part of the cutting)
+    2. If the roll is part of the cut reporting, then the entire allocated roll quantity will be upated as the consumed qty in the on-floor-rolls
+
+
+Q3. When do we change the status of the roll from on-floor to somewhere else
+Ans: When the rolls are readily available in the on-floor-rolls entity, then we will be moving those rolls into the Warehouse.
+    In this case, user will select the location and select the reason and enter the remarks before confirmation.
+
+Q4. What rolls can we see in the on-floor-rolls interface
+Ans: Only those rolls that have the pending qty available. i.e Total roll qty - total consumed qty 
+
+Q4. When do we confirm that a roll is received from the cutting floor to Warehouse.
+Ans: After user selected the rolls and moved them to warehouse, then the warehouse person has to confirm that the rolls from the cutting team are received 
+    1. By selecting the rolls and confirming the roll
+    2. By scanning the roll barcode itself and confirming
+
+
+
+
+
+
+

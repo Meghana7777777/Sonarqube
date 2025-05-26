@@ -1,0 +1,31 @@
+.small-card {
+    text-align: center;
+    padding: 5px 10px;
+    border: 1px solid #f0f0f0;
+    line-height: 1.5;
+    background: #5B5288;
+    color: #fff;
+}
+.bg-lyellow {
+    background: #888052;
+}
+.small-card-title {
+    font-size: 13px;
+    font-weight: normal;
+    opacity: 0.8;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.small-card-content {
+    font-size: 17px;
+}   
+
+.small-card img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    border-radius: 0.35rem;
+    object-fit: cover;
+}

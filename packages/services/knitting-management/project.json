@@ -1,0 +1,68 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/services/knitting-management",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/services/knitting-management",
+        "main": "packages/services/knitting-management/src/main.ts",
+        "tsConfig": "packages/services/knitting-management/tsconfig.app.json",
+        "assets": [
+          "packages/services/knitting-management/src/assets",
+          "packages/services/knitting-management/.env"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/services/knitting-management/src/environments/environment.ts",
+              "with": "packages/services/knitting-management/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "services-knitting-management:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "services-knitting-management:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/services/knitting-management/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/services/knitting-management"
+      ],
+      "options": {
+        "jestConfig": "packages/services/knitting-management/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

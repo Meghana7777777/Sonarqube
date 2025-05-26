@@ -1,0 +1,5 @@
+export enum CutJobStatusEnum {
+    OPEN = "OPEN",
+    PARTIALLY_AVAILABLE = "PARTIALLY AVAILABLE",
+    FULLY_AVAILABLE = "FULLY AVAILABLE"
+}

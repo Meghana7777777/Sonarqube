@@ -1,0 +1,17 @@
+.s-tag {
+    min-width: 40px;
+    text-align: center;
+    padding: 2px;
+    font-weight: 600;
+    font-size: 12px;
+}
+.color-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    display: block;
+}
+.i-green .color-circle{
+    background-color: #5adb00;
+}

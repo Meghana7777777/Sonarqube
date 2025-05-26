@@ -1,0 +1,14 @@
+
+
+micro service
+wms (has wms + inspection)
+
+sub modules
+
+    masters
+    packing-list
+    grn
+    location-allocation
+    inspection
+    notifications
+

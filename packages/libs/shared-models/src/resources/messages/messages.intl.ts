@@ -1,0 +1,91 @@
+
+
+export const messages = {
+    oms: {
+        components: {
+
+        },
+        pages: {
+
+        },
+        common: {
+            authService: {
+                10550: 'All resource and scope level access given to user are retrieved successfully',
+                10551: 'No resource and scope level access are mapped to user',
+                10552: 'Plants data is mapped to user successfully',
+                10553: 'Plants data mapped to user is retrieved successfully',
+                10554: 'No plants are mapped to user',
+                10555: 'All users from keycloak are retrieved successfully',
+                10556: 'No users data found in keycloak',
+                10557: 'User To Plant mapping Records already exist,Please Check and update',
+                10558: 'Duplicated Plant found',
+                10559: 'Plant Cluster mapping Data is mis matched with plant service data',
+                10560: 'Given Plant is not available in plant service data',
+                10561: 'No policies are mapped to the given role',
+            }
+        },
+        errorCodes: {
+            // RESERVING ERROR CODES 1000 - 1100 FOR PACKING LIST
+            1000: "Supplier PO not found. Please check.",
+            1001: "Supplier PO summary has been received successfully.",
+            1002: "Processing has been started for the packing list you cannot edit or delete",
+            1003: "Packing list has been created successfully.",
+            1004: "Packing list has been deleted successfully.",
+            1005: "Packing lists not found for the given criteria.",
+            1006: "Packing list confirmed successfully.",
+            1007: "Packing List already confirmed you cannot delete or update",
+            1008: 'Packing list summary retrieved successfully',
+            1009: 'Packing list already checked In. Please Verify.',
+            1010: 'Packing list security check In not updated successfully. Please verify.',
+            1011: 'Packing list security information not found for the given packing list Id.',
+            1012: 'Security check in details retrieved successfully for given packing list Id.',
+            1013: 'Packing list not yet checked In. Please Verify.',
+            1014: 'Packing list security information not found for the given vehicle information Id.',
+            1015: 'Roll Information not found for the given selection criteria.',
+            1016: 'Print status updated successfully for the rolls',
+            1017: 'Print barcode released successfully for the rolls',
+            1018: 'Packing list vehicle information not found for the given Id',
+            1019: 'Pause reason and unloading spent secs mandatory to pause the unloading.',
+            1020: 'Unloading not yet started. Please verify',
+            1021: 'Unloading already completed. Please verify',
+            1022: 'Unloading started the packing list.',
+            1023: 'Unloading paused the packing list.',
+            1024: 'Unloading completed the packing list.',
+            1025: 'Packing list unloading details retrieved successfully',
+            1026: 'Supplier Po item information retrieved successfully.',
+            1027: 'Supplier Info retrieved successfully.',
+            1028: 'Packing list header not found. Please check.',
+            1029: 'GRN details saved successfully for given roll Id',
+            1030: 'GRN Already been confirmed please check.',
+            1031: 'GRN has been approved successfully.',
+            1032: 'GRN roll information retrieved successfully',
+            1033: `Unloading is not Completed you can't send the vehicle out`,
+            1034: 'GRN not yet confirmed Please confirm.',
+            1035: 'Duplicate lot number identified in the packing list, Please check.',
+            1036: 'Duplicate roll number identified with in the lot number. Please check',
+            1037: 'GRN Details not found for the given pack list. Please verify',
+            1038: 'Inspection details not found for given inspection header Id',
+            1039: 'Inspection Rolls not found for given inspection header Id',
+            1040: 'Inspection Id not found for given roll id and inspection category',
+            1041: 'Inspection header and roll info received successfully',
+            1042: 'Barcode not found.',
+            1043: 'Sample Barcode Not Found.',
+            1044: 'Inspection Confirmed successfully.',
+            1045: 'Po Number not found for the given lot number.',
+            1046: 'Product details not found for the given po number.',
+            1047: 'Please provide inspection Request Id',
+            1048: "Inspection Request details not found for given request Id, Please verify",
+            1049: 'Vehicle Details not found. Please check.',
+            1050: 'Pack list already exist with given pack list code',
+            1051: 'Lot Number already exist for given Supplier',
+            1052: 'Inspection not yet started, Please start the inspection in the board.',
+            1053: 'Reinspection requests can only be created for failed inspection requests.',
+            1054: 'Inspection header already been inspected. Please verify.',
+            1055: 'Rolls already mapped to the inspection request, Please check',
+            1056: 'Rolls successfully mapped to inspection request',
+            1057: 'Rolls Not found for the re request.',
+            1058: 'Inspection Request not found for the given lot number and inspection category.'
+
+        }
+    },
+}

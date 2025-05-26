@@ -1,0 +1,17 @@
+
+  
+
+  .timer {
+    background-color: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    color: red;
+  }
+  
+
+  
+  .box p {
+    font-size: calc(16px + 2vmin);
+    margin: 0;
+  }

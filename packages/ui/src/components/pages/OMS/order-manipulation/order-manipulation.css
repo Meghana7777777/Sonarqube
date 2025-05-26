@@ -1,0 +1,19 @@
+.order-update-validation td:nth-child(1) {
+    background: red !important;
+}
+
+.order-manipulation .ant-steps-item-active {
+    font-weight: bold;
+}
+.c-red {
+    color: red;
+}
+.sku-row-error td:first-child {
+    border-left: 5px solid red;
+    border-radius: 5px;
+}
+
+.sku-row-green td:first-child {
+    border-left: 5px solid transparent;
+    
+}

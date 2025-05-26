@@ -1,0 +1,43 @@
+.dipatch-print table th,
+.dipatch-print table td {
+      border: 1px solid black !important;
+      padding: 8px;
+      font-size: 12px;
+}
+
+.dipatch-print h2 {
+      width: 100%;
+      text-align: center;
+      border: 1px solid black !important;
+}
+
+.dipatch-print table {
+      width: 100%;
+      border-collapse: collapse;
+}
+
+.dipatch-print th.text-left {
+      text-align: left;
+}
+
+.custom-step-gap .ant-steps-item {
+      margin-right: 16px;
+}
+
+.custom-step-gap .ant-steps-item:last-child {
+      margin-right: 0;
+}
+
+@media (max-width: 768px) {
+      .custom-step-gap .ant-steps-item {
+            margin-top: 10px;
+
+      }
+}
+
+@media print {
+      .each-page {
+            page-break-after: always !important;
+            margin: 0;
+      }
+}

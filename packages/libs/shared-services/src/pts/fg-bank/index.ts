@@ -1,0 +1,1 @@
+export * from './fg-bank.service'

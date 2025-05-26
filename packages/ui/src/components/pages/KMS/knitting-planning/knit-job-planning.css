@@ -1,0 +1,37 @@
+.job-block {
+    padding: 4px;
+    border: 1px solid #d9d9d9;
+    text-align: center;
+}
+
+.bg-gray {
+    background-color: #f0f0f0;
+}
+.bg-green {
+    background-color: #27da27;
+}
+.bg-orange {
+    background-color: #ca8300;
+    color: #fff;
+}
+.bg-yellow-knit {
+    background-color: yellow;
+}
+.knit-legend {
+    padding: 2px 10px;
+    border: 1px solid #dfdfdf;
+    text-align: center;
+    font-weight: 500;
+}
+.confirm-block {
+    padding: 24px;
+    background: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgb(240, 240, 240);
+    -webkit-box-shadow: inset 0px 0px 19px 1px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: inset 0px 0px 19px 1px rgba(0, 0, 0, 0.09);
+    box-shadow: inset 0px 0px 19px 1px rgba(0, 0, 0, 0.09);
+    margin-bottom: 20px;
+
+}

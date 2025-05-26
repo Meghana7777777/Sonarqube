@@ -1,0 +1,68 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/services/order-management",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/services/order-management",
+        "main": "packages/services/order-management/src/main.ts",
+        "tsConfig": "packages/services/order-management/tsconfig.app.json",
+        "assets": [
+          "packages/services/order-management/src/assets",
+          "packages/services/order-management/.env"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/services/order-management/src/environments/environment.ts",
+              "with": "packages/services/order-management/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "services-order-management:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "services-order-management:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/services/order-management/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/services/order-management"
+      ],
+      "options": {
+        "jestConfig": "packages/services/order-management/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

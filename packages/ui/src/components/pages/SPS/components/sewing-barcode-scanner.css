@@ -1,0 +1,78 @@
+.input-field-card {
+    width: 720px;
+}
+
+.input-field-card-content {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: -23px;
+    margin-top: -15px;
+}
+
+.session-button {
+    width: 60px;
+
+}
+
+:where(.barcode-table).ant-table-wrapper .ant-table-cell .ant-table-tbody>tr>td {
+    padding: 8px
+}
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-card {
+    animation: fadeOut 0.5s forwards;
+    /* Fade out */
+}
+
+.fade-in-card {
+    animation: fadeIn 0.5s forwards;
+    /* Fade in */
+}
+
+
+.selection-buttons {
+    border: none;
+    width: 100px;
+    height: 100px
+}
+
+
+.refresh-btn{
+    /* z-index: 5;
+    position: absolute;
+    top: 57px;
+    right: 55px; */
+    background-color: #047595;
+    padding: 2px;
+    border: none;
+}
+
+.second-table-button{
+    position: absolute;
+    top: 35px;
+    right: 104px;
+}

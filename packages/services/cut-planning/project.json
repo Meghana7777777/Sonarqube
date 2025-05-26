@@ -1,0 +1,68 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/services/cut-planning",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/services/cut-planning",
+        "main": "packages/services/cut-planning/src/main.ts",
+        "tsConfig": "packages/services/cut-planning/tsconfig.app.json",
+        "assets": [
+          "packages/services/cut-planning/src/assets",
+          "packages/services/cut-planning/.env"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/services/cut-planning/src/environments/environment.ts",
+              "with": "packages/services/cut-planning/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "services-cut-planning:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "services-cut-planning:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/services/cut-planning/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/services/cut-planning"
+      ],
+      "options": {
+        "jestConfig": "packages/services/cut-planning/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

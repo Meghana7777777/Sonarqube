@@ -1,0 +1,6 @@
+export enum ActionTypes {
+    REQUEST_LOGIN = 'REQUEST_LOGIN',
+    LOGIN_SUCCESS = 'LOGIN_SUCCESS',
+    LOGIN_ERROR = 'LOGIN_ERROR',
+    LOGOUT = 'LOGOUT'
+}

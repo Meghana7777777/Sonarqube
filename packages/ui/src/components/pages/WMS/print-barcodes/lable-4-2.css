@@ -1,0 +1,86 @@
+.label {
+  width: 384px;
+  height: 192px;
+  border: 1px solid #000;
+  border-style: dashed;
+  font-size: 10px !important;
+  line-height: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  /* padding: 2px; */
+  /* display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 1px; */
+}
+.label td{
+  white-space: nowrap;
+  font-size: 10px !important;
+  line-height: 10px;
+
+}
+.cell {
+  text-align: left;
+  /* border: 1px solid #000; */
+  padding: 1px;
+}
+
+.cell-border {
+  text-align: left;
+  /* border: 1px solid #000; */
+  padding: 1px;
+}
+
+.colspan-2 {
+  grid-column: span 2;
+}
+
+.colspan-3 {
+  grid-column: span 3;
+}
+
+.colspan-4 {
+  grid-column: span 4;
+}
+
+.rowspan-qr {
+  grid-row: span 6;
+}
+
+.rowspan-barcode {
+  grid-row: span 2;
+  padding: 0px;
+  margin: 0px;
+}
+
+.cell-lotNo {
+  margin-left: 156px;
+}
+
+.label {
+  page-break-before: always;
+}
+
+.label .ant-qrcode {
+  padding: 0px 6px;
+}
+
+/* @page {
+  margin: 0;
+} */
+
+@media print {
+  @page barcode-label {
+    margin: 0;
+  }
+
+  .label {
+    page: barcode-label;
+  }
+
+  .label {
+    page-break-after: always !important;
+    margin: 0;
+  }
+}

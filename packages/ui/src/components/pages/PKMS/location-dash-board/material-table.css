@@ -1,0 +1,45 @@
+:where(.material-table) .ant-table-thead {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+:where(.material-table) .ant-table-tbody {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+:where(.material-table).ant-table-wrapper {
+    clear: both;
+    width: 118%;
+}
+
+.material-table{
+    width: 114%;
+}
+
+
+:where(.material-table).ant-table-wrapper .ant-table {
+    width: 120%;
+}
+
+.ant-table-wrapper .ant-table-pagination.ant-pagination {
+    margin: 8px 0;
+}
+
+:where(.material-table).ant-table-wrapper .ant-table-cell,
+:where(.material-table).ant-table-wrapper .ant-table-thead>tr>th {
+    padding: 6px;
+}
+
+:where(.material-table).ant-table-wrapper .ant-table-tbody>tr>td {
+    padding: 4px;
+}
+
+
+.table-row-odd {
+    background-color: rgb(255, 255, 255); /* White for even rows */
+  }
+  
+  .table-row-even {
+    background-color: rgb(220, 240, 255); /* Light blue for odd rows */
+  }

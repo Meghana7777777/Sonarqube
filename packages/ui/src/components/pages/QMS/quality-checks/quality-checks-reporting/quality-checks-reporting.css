@@ -1,0 +1,43 @@
+.description-label {
+    font-weight: 500;
+    color: #434343;
+  }
+  
+  .description-content {
+    font-weight: 400;
+    color: #262626;
+  }
+  
+  .ant-descriptions-item-content {
+    vertical-align: middle !important;
+  }
+  
+  .ant-descriptions-view {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .current-operation {
+    background-color: #fff3e0; /* Light orange background */
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    animation: pulse-highlight 1s infinite;
+    border: 1px solid #ffb74d; /* Orange border */
+  }
+  
+  @keyframes pulse-highlight {
+    0% { box-shadow: 0 0 0 0 rgba(255, 167, 38, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(255, 167, 38, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 167, 38, 0); }
+  }
+  
+  /* If you want the label to have different styling */
+  .description-label.current-operation {
+    color: #d35400; /* Dark orange text */
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    animation: none;
+    padding-left: 0;
+  }

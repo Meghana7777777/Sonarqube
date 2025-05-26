@@ -1,0 +1,68 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/services/order-execution",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/services/order-execution",
+        "main": "packages/services/order-execution/src/main.ts",
+        "tsConfig": "packages/services/order-execution/tsconfig.app.json",
+        "assets": [
+          "packages/services/order-execution/src/assets",
+          "packages/services/order-execution/.env"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/services/order-execution/src/environments/environment.ts",
+              "with": "packages/services/order-execution/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "services-order-execution:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "services-order-execution:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/services/order-execution/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/services/order-execution"
+      ],
+      "options": {
+        "jestConfig": "packages/services/order-execution/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

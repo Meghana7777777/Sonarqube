@@ -1,0 +1,68 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/services/jobs/order-management-jobs",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/services/jobs/order-management-jobs",
+        "main": "packages/services/jobs/order-management-jobs/src/main.ts",
+        "tsConfig": "packages/services/jobs/order-management-jobs/tsconfig.app.json",
+        "assets": [
+          "packages/services/jobs/order-management-jobs/src/assets",
+          "packages/services/jobs/order-management-jobs/.env"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/services/jobs/order-management-jobs/src/environments/environment.ts",
+              "with": "packages/services/jobs/order-management-jobs/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "services-jobs-order-management-jobs:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "services-jobs-order-management-jobs:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/services/jobs/order-management-jobs/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/services/jobs/order-management-jobs"
+      ],
+      "options": {
+        "jestConfig": "packages/services/jobs/order-management-jobs/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

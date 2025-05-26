@@ -1,0 +1,124 @@
+.w-gray {
+    /* Your custom styles here */
+    color: #fff; /* Text color */
+    background-color: #717c86; /* Button background color */
+    border: 1px solid #ffffff; /* Border color */
+    /* Add more styles as needed */
+  }
+  
+  .ant-btn-primary.w-gray:hover {
+    background-color: #5c5c5c !important; /* Button background color on hover */
+    border-color: #ffffff; /* Border color on hover */
+    /* Add more styles for hover state */
+  }
+
+  .w-yellow {
+    /* Your custom styles here */
+    color: #000; /* Text color */
+    background-color: #fffe00; /* Button background color */
+    border: 1px solid #ffffff; /* Border color */
+    /* Add more styles as needed */
+  }
+  
+  .ant-btn-primary.w-yellow:hover {
+    background-color: #e6e536 !important; /* Button background color on hover */
+    color: #000 !important;
+    border-color: #ffffff; /* Border color on hover */
+    /* Add more styles for hover state */
+  }
+
+  .w-red {
+    /* Your custom styles here */
+    color: #fff; /* Text color */
+    background-color: #ff4d4f; /* Button background color */
+    border: 1px solid #ffffff; /* Border color */
+    /* Add more styles as needed */
+  }
+  
+  .ant-btn-primary.w-red:hover {
+    background-color: #ff7875 !important; /* Button background color on hover */
+    border-color: #ffffff; /* Border color on hover */
+    /* Add more styles for hover state */
+  }
+  .w-tro {
+    /* Your custom styles here */
+    color: #fff; /* Text color */
+    background-color: #385d65; /* Button background color */
+    border: 1px solid #ffffff; /* Border color */
+    /* Add more styles as needed */
+  }
+  
+  .ant-btn-primary.w-tro:hover {
+    background-color: #4a737c !important; /* Button background color on hover */
+    border-color: #ffffff; /* Border color on hover */
+    /* Add more styles for hover state */
+  }
+
+  .w-ready {
+    /* Your custom styles here */
+    color: #fff; /* Text color */
+    background-color: #2bbdb8; /* Button background color */
+    border: 1px solid #ffffff; /* Border color */
+    /* Add more styles as needed */
+  }
+  
+  .ant-btn-primary.w-ready:hover {
+    background-color: #32d9d3 !important; /* Button background color on hover */
+    border-color: #ffffff; /* Border color on hover */
+    /* Add more styles for hover state */
+  }
+  .w-tran {
+    /* Your custom styles here */
+    color: #fff; /* Text color */
+    background-color: #1e3135; /* Button background color */
+    border: 1px solid #ffffff; /* Border color */
+    /* Add more styles as needed */
+  }
+  
+  .ant-btn-primary.w-tran:hover {
+    background-color: #345359 !important; /* Button background color on hover */
+    border-color: #ffffff; /* Border color on hover */
+    /* Add more styles for hover state */
+  }
+  .w-lgreen {
+    /* Your custom styles here */
+    color: #000; /* Text color */
+    background-color: #90ee90; /* Button background color */
+    border: 1px solid #fff; /* Border color */
+    /* Add more styles as needed */
+  }
+  
+  .ant-btn-primary.w-lgreen:hover {
+    background-color: #7cea7c !important; /* Button background color on hover */
+    color: #000 !important;
+    border-color: #ffffff; /* Border color on hover */
+    /* Add more styles for hover state */
+  }
+  .w-green {
+    /* Your custom styles here */
+    color: #fff; /* Text color */
+    background-color: #0a820a; /* Button background color */
+    border: 1px solid #fff; /* Border color */
+    /* Add more styles as needed */
+  }
+  
+  .ant-btn-primary.w-green:hover {
+    background-color: #0e9e0e !important; /* Button background color on hover */
+    color: #fff !important;
+    border-color: #ffffff; /* Border color on hover */
+    /* Add more styles for hover state */
+  }
+  .w-dark-pink {
+    /* Your custom styles here */
+    color: #fff; /* Text color */
+    background-color: #eb2f96; /* Button background color */
+    border: 1px solid #fff; /* Border color */
+    /* Add more styles as needed */
+  }
+  
+  .ant-btn-primary.w-dark-pink:hover {
+    background-color: #ed178d !important; /* Button background color on hover */
+    color: #fff !important;
+    border-color: #ffffff; /* Border color on hover */
+    /* Add more styles for hover state */
+  }

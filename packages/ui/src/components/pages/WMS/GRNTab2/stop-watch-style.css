@@ -1,0 +1,78 @@
+.stopwatch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.stopwatch-rotating {
+  animation: rotate 1s infinite linear;
+  transition: transform 0.3s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-25%);
+  }
+
+  50% {
+    transform: translateY(-50%);
+  }
+
+  75% {
+    transform: translateY(-25%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.stopwatch-time {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000;
+  animation: rotate 60s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.time-card {
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 0px;
+  height: 40px;
+  width: 40px;
+  background-color: gray;
+  margin-left: 15px;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.time-card-value {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 7px;
+}
+
+.ant-picker .ant-picker-input>input[disabled] {
+  font-weight: bold;
+  color: black;
+}

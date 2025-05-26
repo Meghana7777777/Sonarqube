@@ -1,0 +1,23 @@
+.bom-card.bom-bg-cadetblue .ant-card-head{
+    background-color: cadetblue;
+}
+
+.bom-card.bom-bg-chocolate .ant-card-head{
+    background-color: chocolate;
+}
+
+.bom-card .ant-table-wrapper.bom-tbl .ant-table-thead >tr>th, .bom-card .ant-table-wrapper.bom-tbl .ant-table-thead >tr>td {
+    background: #696969;
+}
+
+
+@keyframes arrowMove {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .animated-arrow {
+    animation: arrowMove 1s infinite ease-in-out;
+  }
+  

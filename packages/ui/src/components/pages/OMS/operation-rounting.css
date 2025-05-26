@@ -1,0 +1,40 @@
+.confirm-mdl-p {
+    margin: 8px;
+}
+
+
+
+:where(.confirm-mdl).ant-modal .ant-modal-content {
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px 24px;
+    width: 430px;
+}
+
+
+.node-text {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: left;
+}
+
+
+.node-text td:nth-child(1) {
+    font-size: 16px;
+}
+.bundle-group-div {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
+    background: white;
+    width: 100px;
+    margin-bottom: 10px;
+    padding: 10px 0px;
+    border-radius: 5px;
+    text-align: center;
+}
+.ant-table-wrapper .ant-table.ant-table-small .ant-table-tbody .ant-table-wrapper.op-child-tbl:only-child .ant-table {
+    margin: -6px;
+}

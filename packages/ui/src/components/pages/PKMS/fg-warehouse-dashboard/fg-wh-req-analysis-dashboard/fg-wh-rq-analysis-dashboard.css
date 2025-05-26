@@ -1,0 +1,72 @@
+.fg-wh-dashboard-mini-card {
+    background: #FFECE5;
+    /* linear-gradient(to bottom right, #ff512f, #dd2476); */
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* left: 35px; */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5
+}
+
+.fg-wh-dashboard-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 5px 5px 5px 80px;
+    margin-left: 19px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* max-width: 70%; */
+}
+
+.fg-wh-req-card-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222222;
+    margin: 8px 0;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.fg-wh-req-card-description {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #555555;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.fg-wh-req-card-value:hover {
+    color: #007BFF;
+}
+
+.fg-wh-req-main-card:hover {
+    transform: translateY(-5px);
+}
+
+.fg-wh-departure-header {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.divider-title {
+    border-color: #7cb305;
+    margin: 3px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

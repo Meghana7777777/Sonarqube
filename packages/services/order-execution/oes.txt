@@ -1,0 +1,81 @@
+ALTERS:
+
+
+
+alter table p_cut_rm add column ref_component varchar(5) not null after components;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+order creation, order qty update, ratios, markers, dockets, cut jobs
+
+Pre Requisites
+1. delete the order qty update related screens and tables
+2. delete the op version  related screens and tables
+3. delete the current po related tables
+
+
+Note: DON'T change the poSerial column name in the entities. 
+While creating the order in OES, rename the proc_serial as po_serial so entire CPS and OES have it as po_serial
+
+
+
+--------------------- OES  -------------------------------
+Changes Proposed
+1. processing order creation - get the same from KMS
+    a. auto populate cut RM 
+    b. auto populate cut RM size Props 
+    c. po_sub_line_bundle get the same from KMS
+    d. psl features populate
+2. get the info of the po only (header info / features) from OES for all the cutting related screens wherever the poSerial is passed
+
+
+
+1. order creation - get from KMS
+2. order qty update - NA
+3. op version - add style, color, product_code, product_type in the op_version
+    and modify the op_sequence table population w.r.t OMS
+4. Po ratios - add the sub process name in the ratio screen
+5. Markers - get the marker types master to global masters
+6. add a new column ref_component in cut_rm. While generating the cut,take this ref component and create the panels.
+    add 1 component per fabric. The ref_component name is C1, C2, C3, C4
+
+
+UI 
+
+change the drop down in all places to 
+
+style  -> Mo numbers (multi select)  for proceeding the PO / create   (same as in KMS)
+
+
+
+
+
+------------------------ CPS -----------------------------------
+
+
+1. when the docket is generated, we will save the PSL mapping for the docket. This should be done when you confirm the dockets.
+    The left over qty has to be get from the po_sub_line  and accumulation from docket_psl_map
+
+    docket_psl_map
+    docket_bun_psl_map
+    So when generating the panels, we can easily map the psl_ids by using the docket_bun_psl_map
+    panels are mandatory to be generated only for the main item and only 1 component under the main docket (pick any 1 component)
+    add psl_id, bundle_barcode in the docket_panel (bundle_barcode will be updated after the bundling activity)
+
+
+    After the cut is reported, we will update the shade to the panels
+
+

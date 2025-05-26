@@ -1,0 +1,22 @@
+import { BullModule } from "@nestjs/bull";
+import { redisJobConfigs } from '../../config/redis/redis-config';
+import { InvsBullJobNames } from "@xpparel/shared-models";
+
+export const BullQueueRegister = [
+    BullModule.registerQueueAsync({
+        name: InvsBullJobNames.AUDIO,
+        useFactory: () => ({
+            name: InvsBullJobNames.AUDIO,
+            redis: {
+                ...redisJobConfigs.redis
+            },
+            defaultJobOptions: {
+                ...redisJobConfigs.bullJobOptions
+            },
+            settings: {
+                ...redisJobConfigs.bullAdvancedSettings
+            }
+        }),
+    }),
+   
+]

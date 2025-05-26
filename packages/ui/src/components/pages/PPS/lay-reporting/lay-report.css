@@ -1,0 +1,6 @@
+.lay-reporting-table td, .lay-reporting-table th {
+    padding: 0 2px !important;
+}
+.error-class {
+    background-color: red !important;
+}

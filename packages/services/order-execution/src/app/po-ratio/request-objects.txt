@@ -1,0 +1,120 @@
+[{
+    "username": "raj",
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "userId": 1,
+    "poSerial": 4,
+    "rName": "Ratio 1",
+    "rCode": 0,
+    "maxlPies": 15,
+    "components": ["Front"],
+    "ratioLines": [
+        {
+            "iCode": "F00099-403",
+            "productName": "Body",
+            "plies": 80,
+            "maxlPies": 70,
+            "sizeRatios": [
+               {
+                  "size": "S",
+                  "ratio": 5
+               },
+               {
+                  "size": "L",
+                  "ratio": 5
+               }
+            ]
+        }
+    ],
+    "remarks": "",
+    "ratioDesc": ""
+}]
+
+
+
+
+{
+    "username": "raj",
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "userId": 1,
+    "poSerial": 4
+}
+
+{
+    "username": "raj",
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "userId": 1,
+    "poSerial": 4
+    "iCode": "F00099-403"
+}
+
+
+{
+    "username": "raj",
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "userId": 1,
+    "poSerial": 4
+    "poRatioId": 8
+}
+
+
+{
+    "username": "raj",
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "userId": 1,
+    "poSerial": 4,
+    "productName":"Body"
+}
+
+
+
+
+
+[{
+    "username": "raj",
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "userId": 1,
+    "poSerial": 4,
+    "maxlPies": 15,
+    "components": ["", ""],
+    "ratioLines": [
+        {
+            "iCode": "F00099-403",
+            "productName": "Body",
+            "plies": 80,
+            "maxlPies": 70,
+            "sizeRatios": [
+               {
+                  "size": "S",
+                  "ratio": 2
+               },
+               {
+                  "size": "L",
+                  "ratio": 4
+               }
+            ]
+        },{
+            "iCode": "F00566-428",
+            "productName": "Body",
+            "plies": 80,
+            "maxlPies": 70,
+            "sizeRatios": [
+                {
+                  "size": "S",
+                  "ratio": 2
+               },
+               {
+                  "size": "L",
+                  "ratio": 4
+               }
+            ]
+        }
+    ],
+    "remarks": "Normal",
+    "ratioDesc": ""
+}]

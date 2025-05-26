@@ -1,0 +1,1 @@
+export * from './trolley-bin-mapping.request';

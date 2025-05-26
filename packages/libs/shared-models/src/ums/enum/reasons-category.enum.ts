@@ -1,0 +1,7 @@
+
+
+export enum ReasonCategoryEnum {
+    LAYING_DOWNTIME = 'LAYING_DOWNTIME',
+    CUTTING_DOWNTIME = 'CUTTING_DOWNTIME',
+    EMB_REJECTIONS = 'EMB_REJECTIONS'
+}

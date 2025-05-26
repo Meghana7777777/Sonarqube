@@ -1,0 +1,1 @@
+export * from './sew-job-gen-page';

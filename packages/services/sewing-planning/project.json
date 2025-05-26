@@ -1,0 +1,68 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/services/sewing-planning",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/services/sewing-planning",
+        "main": "packages/services/sewing-planning/src/main.ts",
+        "tsConfig": "packages/services/sewing-planning/tsconfig.app.json",
+        "assets": [
+          "packages/services/sewing-planning/src/assets",
+          "packages/services/sewing-planning/.env"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/services/sewing-planning/src/environments/environment.ts",
+              "with": "packages/services/sewing-planning/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "services-sewing-planning:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "services-sewing-planning:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/services/sewing-planning/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/services/sewing-planning"
+      ],
+      "options": {
+        "jestConfig": "packages/services/sewing-planning/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

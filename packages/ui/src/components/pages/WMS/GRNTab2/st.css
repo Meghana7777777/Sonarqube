@@ -1,0 +1,35 @@
+.number-box {
+    max-height: 60px;
+    min-width: 50px;
+    margin-right: 10px;
+   
+    border-radius: 0px;
+    float: left;
+}
+
+.number-box .counter-digit {
+    padding: 5px 13px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #de4848;
+    background-color: #f7f7f7;
+    box-shadow: 1px 5px 9px -4px rgba(0, 0, 0, 0.63);
+}
+.number-box .counter-divider {
+    /* padding: 10px; */
+    font-size: 35px;
+    font-weight: 700;
+    color: #000;
+    display: none;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .blinking-text {
+    color: green;
+    animation: blink 1s infinite;
+  }

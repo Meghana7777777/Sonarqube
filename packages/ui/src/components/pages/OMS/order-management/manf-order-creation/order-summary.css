@@ -1,0 +1,6 @@
+.f-600 {
+    font-weight: 600;
+}
+.header-collapse .ant-collapse-content-box {
+    padding: 3px !important;
+}

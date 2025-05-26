@@ -1,0 +1,56 @@
+.custom-datepicker .ant-picker-input input {
+  font-size: 16px;         
+  font-weight: 500;        
+  color: #333;             
+  background-color: #f9f9f9; 
+}
+
+
+.custom-datepicker .ant-picker-input input::placeholder {
+  font-size: 14px;         
+  color: #999;             
+}
+
+
+.custom-datepicker .ant-picker-dropdown {
+font-size: 14px; 
+color: #444;     
+}
+
+
+.custom-datepicker .ant-picker-cell:hover {
+background-color: #007bff; 
+color: #fff;               
+}
+
+
+
+
+/* Style for active status with a very light gradient and shiny finish */
+.status-tag.inactive {
+color: #fff;
+background: linear-gradient(135deg, #a3d39d 0%, #d0f1d0 100%); /* Very light green gradient */
+padding: 4px 8px;
+border-radius: 4px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 1px 3px rgba(255, 255, 255, 0.5); /* Inner and outer shadow */
+text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6); /* Shine effect on text */
+transition: all 0.3s ease;
+}
+
+/* Style for inactive status with a very light gradient and shiny finish */
+.status-tag.active {
+color: #fff;
+background: linear-gradient(135deg, #574d4d 0%, #eea4a4 100%); /* Very light red gradient */
+padding: 4px 8px;
+border-radius: 4px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 1px 3px rgba(255, 255, 255, 0.5); /* Inner and outer shadow */
+text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6); /* Shine effect on text */
+transition: all 0.3s ease;
+}
+
+/* Hover effect to enhance the shine */
+.status-tag:hover {
+box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2), inset 0 2px 5px rgba(255, 255, 255, 0.7); /* Stronger shadow on hover */
+text-shadow: 0 2px 6px rgba(255, 255, 255, 0.8); /* Stronger shine on hover */
+transform: scale(1.05); /* Slightly enlarge on hover for a dynamic effect */
+}

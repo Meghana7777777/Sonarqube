@@ -1,0 +1,14 @@
+
+export enum PackingListStatusEnumOld {
+    OPEN = 'OPEN',
+
+    SECURITY_IN = 'SECURITY_IN',
+    UNLOAD_START = 'UNLOAD_START',
+    UNLOAD_END = 'UNLOAD_END',
+
+    GRN_CONFIRMED = 'GRN CONFIRMED',
+    MATERIAL_ALLOCATED = 'MATERIAL ALLOCATED',
+
+    
+    SECURITY_OUT = 'SECURITY_OUT',
+}

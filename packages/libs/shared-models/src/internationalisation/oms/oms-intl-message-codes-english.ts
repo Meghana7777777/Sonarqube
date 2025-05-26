@@ -1,0 +1,108 @@
+export const OmsIntlMessageCodesEnglish = {
+  // components
+  //1001- 6000
+  1001: 'Data exits with same component',
+  1002: 'Component  "Updated" : "Created"} Successfully',
+  1003: 'Data not Found',
+  1004: 'Component Deleted Successfully',
+  1005: 'Cannot Delete. Components already mapped to Product',
+  1006: "Please give component Id",
+  // product-type-service
+  1011: 'Selected component does not exist',
+  1012: 'Product Type  "Updated" : "Created" Successfully',
+  1014: "Cannot Delete Product Type already in use",
+  1015: 'Product Type Deleted Successfully',
+  1016: "Please give Product Type Id",
+  1023: "Data exists with the same product type",
+  1024: 'Product Type  "Updated" : "Created"} Successfully',
+  // order-info-service
+  1025: 'Order does not exist',
+  1026: 'Sub product comninations doesnt exist',
+  1027: 'Order no not exists. Please check and try again!!!',
+  1028: 'Order id is not provided',
+  1029: 'Order doest not exist for id',
+  1030: 'Header info retrieved',
+  1031: 'Po serial is not provided',
+  1032: 'Order attributes retrieved for the prouction order',
+  1034: 'Size code not found',
+  1035: 'Product type cannot be deleted',
+  1036: 'Product type not found',
+  1038: 'Docket information retrieved successfully',
+  1039: "Please Provide Order Id",
+  1040: "Sewing Order Creation Info Successfully Retrieved",
+  1042: 'Data retrieved',
+  1044: 'Order info not found for the given order ref no',
+  1045: 'Order info no found for the given order Line ref no',
+  1046: 'Sub Line Info Retrieved successfully',
+  1047: 'Order info not found for the given po serial',
+  1050: "Pack Order Creation Info Successfully Retrieved",
+
+  //pre- integration service 
+  1051: 'This Sale Order Information already exists.',
+  1052: 'Sale Order Information Saved Succussfully.',
+  1053: 'Sale Order List Information Saved Successfully.',
+  1054: 'Sale Order List Retrived Successfully.',
+  1055: 'Job Added for order creation Successfully.',
+
+  //product-prototype-info-service
+  1056: 'Product Data does not exist for sale order.',
+  1057: 'Product info retrieved successfully',
+
+  //product-prototype-service
+  1058: 'Product does not exist',
+  1059: ' Product already confirmed. You cannot do any changes. Revert the product confirmation and try again',
+  1060: 'Sub Product does not exist',
+  1061: 'Components mapped to the cut materials',
+  1064: 'Sku components mapping is still not done to delete',
+  1065: 'Components un-mapped to the cut materials',
+  1067: 'Components were still not mapped for the sub product',
+  1068: 'Product confirmed successfully',
+  1069: 'SO number is not provided',
+  1071: 'Product is not yet confirmed',
+  1072: 'Production orders are already created for this SO',
+  1073: 'Product un-confirmed successfully',
+  1074: 'Product is already existing for the SO',
+  1075: 'Defaul product and sub product saved',
+  1076: 'Order id is not provided',
+  1077: 'Product does not exist for the order',
+  1079: 'Product and sub product deleted',
+  //order manipulation helper service
+  1080: 'Po info is not found',
+  //order manipulation  service
+  1081: 'Order no not exists. Please check and try again!!!',
+  1082: 'Order is already confirmed. You are not allowed to do the changes',
+  1083: 'Color quantity is already updated . Please delete and proceed again',
+  1084: 'Plant style is not provided',
+  1085: 'Plant style',
+  1086: 'Order sizes has been updated successfully!!!',
+  1090: 'So Sizes deleted successfully!!!',
+  1092: 'Order line details not found. Please check',
+  1094: 'RM must be attached to all the products',
+  1095: 'SO product type SKU mapping successfully completed.',
+  1096: 'SO is already confirmed',
+  1097: 'Pack method config is not saved for the SO',
+  1098: 'SO pack method successfully confirmed',
+  1102: 'SO product type and RM SKU mapping has been deleted successfully',
+  1107: 'SO Size quantities saved successfully!!!',
+  1110: 'Color quantity is not yet updated . Please update and proceed again',
+  1111: 'SO sizes has been deleted successfully!!!',
+  1114: 'Rm sku mapping is not yet completed. Please do SKU mapping before confirming the order.',
+  1115: 'Order sizes are not yet mapped , Please do size mapping before confirming.',
+  1116: 'Pack method not yet attached to the order. Please attach and confirm the order',
+  1117: 'Order Confirmed successfully',
+  1119: 'Order is not yet confirmed.',
+  1120: 'Order UN Confirmed successfully',
+  1121: 'PO Serial is already updated for the given Order Line',
+  1122: 'Po serial Updated for the Order line successfully',
+  1123: 'Plant style ${req.plantStyle} is already mapped to SO: ${planStyleRefRecordExist.orderNo}',
+  1124: 'saved successfully',
+  1125: 'Deleted plantStyle and plannedCutDate successfully',
+  1126: 'Color wise quantities already updated',
+  1127: 'Quantity updated successfully',
+
+
+
+
+
+
+}

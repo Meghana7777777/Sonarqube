@@ -1,0 +1,138 @@
+pipeline {
+    agent any
+    environment {
+        CI_PROJECT_DIR = "${WORKSPACE}"
+        PATH = "${WORKSPACE}/node_modules/.bin:$PATH"
+    }
+    stages {
+        stage('Replace .env with cps.env') {
+            steps {
+                sh '''
+                    cp -f documents/env/sq_qa/cps.env packages/services/cut-planning/.env
+                    cp -f documents/env/sq_qa/ets.env packages/services/emb-tracking/.env
+                    cp -f documents/env/sq_qa/oes.env packages/services/order-execution/.env
+                    cp -f documents/env/sq_qa/oms.env packages/services/order-management/.env
+                    cp -f documents/env/sq_qa/ums.env packages/services/unit-management/.env
+                    cp -f documents/env/sq_qa/wms.env packages/services/warehouse-management/.env
+                    cp -f documents/env/sq_qa/dms.env packages/services/dispatch-management/.env
+                    cp -f documents/env/sq_qa/sps.env packages/services/sewing-planning/.env
+                    cp -f documents/env/sq_qa/pms.env packages/services/packing-management/.env
+                    cp -f documents/env/sq_qa/pkdms.env packages/services/packing-dispatch-management/.env
+                    cp -f documents/env/sq_qa/qms.env packages/services/quality-management/.env
+                    cp -f documents/env/sq_qa/pts.env packages/services/production-tracking/.env
+                    cp -f documents/env/sq_qa/ins.env packages/services/inspection/.env
+                    cp -f documents/env/sq_qa/kms.env packages/services/knitting-management/.env
+                    cp -f documents/env/sq_qa/invs.env packages/services/inventory-management/.env
+                '''
+            }
+        }
+        stage('Replace config.ts') {
+            steps {
+                sh 'cp -f documents/env/sq_qa/shared-config.ts packages/libs/shared-services/src/config.ts'
+            }
+        }
+        stage('Replace environment.js') {
+            steps {
+                sh 'cp -f documents/env/sq_qa/environment.js packages/ui/src/assets/environment.js'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Build Backend') {
+            steps {
+                sh '''
+                    export PATH="$CI_PROJECT_DIR/node_modules/.bin:$PATH"
+                    nx run services-order-management:build --skip-nx-cache
+                    nx run services-unit-management:build --skip-nx-cache
+                    nx run services-warehouse-management:build --skip-nx-cache
+                    nx run services-packing-dispatch-management:build --skip-nx-cache
+                    nx run services-packing-management:build --skip-nx-cache
+                    nx run services-quality-management:build --skip-nx-cache
+                    nx run services-inspection:build --skip-nx-cache
+                    nx run services-knitting-management:build
+                    nx run services-inventory-management:build --skip-nx-cache
+                    nx run services-sewing-planning:build
+                    nx run services-production-tracking:build
+                    nx run services-cut-planning:build --skip-nx-cache
+                    nx run services-order-execution:build
+                '''
+            }
+        }
+        stage('Build Frontend') {
+            steps {
+                sh '''
+                    export PATH="$CI_PROJECT_DIR/node_modules/.bin:$PATH"
+                    nx run ui:build --skip-nx-cache
+                '''
+            }
+        }
+        stage('Transfer Build Files') {
+            steps {
+                sshagent(credentials: ['2']) { // Use the correct credentials ID here
+                    sh '''
+                        ssh root@64.227.137.119 "rm -rf /var/www/html/sq-xpparel-qa_app/*"
+                        ssh root@64.227.137.119 "rm -rf /var/www/html/sq-xpparel-qa/dist/packages/services"
+                        scp -r $CI_PROJECT_DIR/dist/packages/ui/* root@64.227.137.119:/var/www/html/sq-xpparel-qa_app
+                        scp -r $CI_PROJECT_DIR/dist/packages/services root@64.227.137.119:/var/www/html/sq-xpparel-qa/dist/packages
+                    '''
+                }
+            }
+        }
+        stage('ReStart Services with PM2') {
+            steps {
+                sshagent(credentials: ['2']) { // Use the correct credentials ID here
+                    sh '''
+                        ssh root@64.227.137.119 <<EOF
+pm2 restart  all
+pm2 save
+EOF
+                    '''
+                }
+            }
+        }
+    }
+    post {
+        success {
+            script {
+                def startTime = currentBuild.getStartTimeInMillis()
+                def endTime = System.currentTimeMillis()
+                def duration = (endTime - startTime) / 1000
+
+                // Send success email
+                emailext(
+                    to: 'saikumarvardhi7799@gmail.com, rajud@schemaxtech.com, arunkumars@schemaxtech.com',
+                    subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                    body: """Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' was successful.
+Start Time: ${new Date(startTime)}
+End Time: ${new Date(endTime)}
+Duration: ${duration} seconds
+Check console output at ${env.BUILD_URL} to view the results."""
+                )
+            }
+        }
+        failure {
+            script {
+                def logFile = "${WORKSPACE}/log"
+                def logContent = ""
+                if (fileExists(logFile)) {
+                    logContent = readFile(logFile).take(1000)
+                } else {
+                    logContent = "Log file not found."
+                }
+
+                // Send failure email
+                emailext(
+                    to: 'saikumarvardhi7799@gmail.com, rajud@schemaxtech.com, arunkumars@schemaxtech.com',
+                    subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                    body: """Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' failed.
+Error Log:
+${logContent}
+Check console output at ${env.BUILD_URL} to view the results."""
+                )
+            }
+        }
+    }
+}

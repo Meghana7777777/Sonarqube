@@ -1,0 +1,1 @@
+export * from './asset-locations-create-dto';

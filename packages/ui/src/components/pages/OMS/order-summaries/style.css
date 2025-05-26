@@ -1,0 +1,39 @@
+.proceeded-row {
+    position: relative;
+    background-color: #f6ffed !important; /* light green or any visual cue */
+}
+
+
+
+
+.proceeded-tag {
+    position: absolute;
+    top: -6px;
+    left: -4px;
+    background-color: rgba(82, 196, 26, 0.6); /* transparent green */
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 1px 6px;
+    border-radius: 3px;
+    /* transform: rotate(-15deg); */
+    pointer-events: none; 
+    transition: background-color 0.3s ease-in-out;
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+
+}
+
+/* .proceeded-tag {
+    position: absolute;
+    top: -6px;
+    left: -4px;
+    background-color: rgba(82, 196, 26, 0.6); 
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 1px 6px;
+    border-radius: 3px;
+    pointer-events: none; 
+    z-index: 1;
+    z-index: 1;
+} */

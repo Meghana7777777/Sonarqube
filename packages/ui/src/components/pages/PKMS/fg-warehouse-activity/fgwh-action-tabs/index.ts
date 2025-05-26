@@ -1,0 +1,7 @@
+export * from './fgwa-approved-tab'
+export * from './fgwa-fg-in-tab'
+export * from './fgwa-open-tab'
+export * from './fgwa-pallet-suggestion-tab'
+export * from './fgwa-palletisation-tab'
+export * from './fgwa-security-in-tab'
+export * from './fgwa-location-mapping'

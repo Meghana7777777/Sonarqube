@@ -1,0 +1,112 @@
+osl ids
+1,2,3,4,11,12,13,14,15,16,17,18
+2. createFgsForOslRefId
+{
+    "companyCode": "NORLANKA",
+    "unitCode": "NORLANKA",
+    "oslRefId": [1,2,3,4,11,12,13,14,15,16,17,18]
+}
+
+1. createOslRefIdsForMo
+{
+    "moNumber": "MO-203",
+    "companyCode": "NORLANKA",
+    "unitCode": "NORLANKA",
+    "username": "rajesh"
+}
+this will internal call
+op_seq, fgs, fg_op_deps
+
+
+2. triggerCreateBundlesForMo
+{
+    "moNumber": "MO-203",
+    "companyCode": "NORLANKA",
+    "unitCode": "NORLANKA",
+    "username": "rajesh"
+}
+Already included in 1
+
+3. createProcOrderRef
+{
+    "username": "admin",
+    "unitCode": "NORLANKA",
+    "companyCode": "NORLANKA",
+    "iNeedMoSubLines": true,
+    "processingSerial": 1,
+    "processType": "SEW",
+    "iNeedPrcOrdLineInfo": true,
+    "iNeedPrcOrdProductInfo": true,
+    "iNeedPrcOrdSubLineInfo": true
+}
+
+4. triggerMapJobsForProcSerial
+{
+    "username": "admin",
+    "unitCode": "NORLANKA",
+    "companyCode": "NORLANKA",
+    "iNeedMoSubLines": true,
+    "processingSerial": 1,
+    "processType": "LINK",
+    "iNeedPrcOrdLineInfo": true,
+    "iNeedPrcOrdProductInfo": true,
+    "iNeedPrcOrdSubLineInfo": true
+}
+
+
+
+
+
+
+
+
+
+
+
+
+To Dos
+1.material request screen
+    show job wise, item wise qtys for user understanding
+
+2. After planning all jobs in sps planning, the last is remaining in the unplanned block even after planning. 
+    After refresh its working as expected
+3. Session need to be captured during the operation tracking
+4. get the last scanned bundles for an operator id for a day
+5. knit job completed status after reporting
+6. Remove job number from po_sub_line_bundle
+
+
+
+
+
+Observations
+
+1. Material requirement must be shown in the knit material request summary screen
+2. Material request screen, click submit validate if rolls for all the items are selected before submitting
+3. change 10,2 for all req, allocated, issued in material allocation entities
+4. WMS - WH request creation 
+5. strict validations while retreiving material allocated info in KMS
+6. validation to stop duplicate WH request number in WMS 
+7. in knit planning dashboard, in the reporting popup add the issuance status
+8. In knit job reporting, show the error response based on the backend response (material not issued)
+
+
+http://localhost:8012/op-reporting/reportBundleForAnOp
+
+{
+    "unitCode":"NORLANKA",
+    "companyCode":"NORLANKA",
+    "userId":20,
+    "barcode":"1-KLS-",
+    "opCode":"101",
+    "operatorId":1,
+    "locationCode":"NAM",
+    "forceReportPartial":false,
+    "shift":"A",
+    "scannedDate":"2025-05-02 20:26:36",
+    "incomingQty":0, // optional
+    "sessionId":1 
+}
+
+
+

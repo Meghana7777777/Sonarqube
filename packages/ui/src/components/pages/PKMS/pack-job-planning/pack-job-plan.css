@@ -1,0 +1,8 @@
+.box-card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    gap: 15px;
+  }

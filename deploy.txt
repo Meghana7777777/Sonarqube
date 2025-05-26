@@ -1,0 +1,13 @@
+nx run services-cut-planning:build
+nx run services-emb-tracking:build
+nx run services-order-execution:build
+nx run services-order-management:build
+nx run services-unit-management:build
+nx run services-warehouse-management:build
+
+nx run ui:build
+
+redis check: https://norlanka-cps.xpparel.com/arena/dashboard/
+
+Prod redis service name:
+systemctl status redis-server.service

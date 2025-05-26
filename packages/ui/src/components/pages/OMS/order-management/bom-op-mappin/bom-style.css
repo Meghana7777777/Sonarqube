@@ -1,0 +1,28 @@
+.bom-card.bom-bg-red .ant-card-head{
+    background-color: red;
+}
+
+.bom-card.bom-bg-green .ant-card-head{
+    background-color: #48db48;
+}
+
+.bom-card .ant-table-wrapper.bom-tbl .ant-table-thead >tr>th, .bom-card .ant-table-wrapper.bom-tbl .ant-table-thead >tr>td {
+    background: #696969;
+}
+.color-white {
+    color: #fff;
+}
+@keyframes blink {
+    0% {
+      opacity: 1; /* Fully visible */
+    }
+    50% {
+      opacity: 0; /* Invisible */
+    }
+    100% {
+      opacity: 1; /* Fully visible */
+    }
+  }
+  .blinking-text {
+    animation: blink 1s infinite; /* The animation will last 1 second and repeat infinitely */
+  }

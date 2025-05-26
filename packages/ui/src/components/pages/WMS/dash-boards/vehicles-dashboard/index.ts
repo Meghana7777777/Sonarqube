@@ -1,0 +1,10 @@
+export * from './no-of-vehicles-to-be-arrived';
+export * from './no-of-vehicles-unloading-completed';
+export * from './main-component';
+export * from './vehicles-average-waiting time';
+export * from './no-of-vehicles-arrived';
+export * from './no-of-vehicles-waiting-for-unloading';
+export * from './vehicles-in-each-gate';
+export * from './no-of-vehicles-unloading-inprogress';
+export * from './how-much-time-vehicles-in-the-plant';
+export * from './average-unloadingtime';

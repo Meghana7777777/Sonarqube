@@ -1,0 +1,25 @@
+.topdown-button {
+    font-family: sans-serif;
+    /* width: 30px; */
+    border: 1px solid navy;
+    vertical-align: top;
+    font-size: 18px;
+    min-height: 120px;
+    position: relative;
+    text-align: center;
+    /* -ms-writing-mode: tb-rl; */
+    -webkit-writing-mode: vertical-rl;
+    -o-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    /* text-transform: uppercase; */
+    font-size-adjust: 0.5;
+    text-orientation: upright;
+    margin-left: 0.2rem;
+    /* padding: 0.5rem; */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popovercard .ant-popover-content .ant-popover-inner {
+    background-color: #ffffe1;
+}

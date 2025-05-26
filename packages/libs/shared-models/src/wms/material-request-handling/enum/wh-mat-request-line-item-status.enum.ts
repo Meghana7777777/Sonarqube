@@ -1,0 +1,11 @@
+
+export enum WhMatReqLineItemStatusEnum {
+    OPEN = 'OP',
+    PREPARING_MATERIAL = 'PM',
+    MATERIAL_NOT_AVL = 'MNA',
+    MATERIAL_READY = 'MR',
+    MATERIAL_ON_TROLLEY = 'MOT',
+    MATERIAL_IN_TRANSIT = 'MIT',
+    REACHED_DESITNATION = 'RD',
+    MATERIAL_ISSUED = 'ISS'
+}

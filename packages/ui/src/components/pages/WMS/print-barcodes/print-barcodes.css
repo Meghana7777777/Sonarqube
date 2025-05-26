@@ -1,0 +1,131 @@
+.print-barcodes-form-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.print-barcodes-header-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+
+
+}
+
+.print-barcodes-table-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.barcode-label tr {
+    display: inline-flex;
+    width: 100%;
+}
+
+.barcode-label td {
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+.barcode-label tr td:last-child {
+    margin-right: 3px;
+}
+
+.barcode-label td .ant-descriptions-item-content {
+    white-space: nowrap;
+}
+
+.barcode-label tr td .ant-descriptions-item-label.ant-descriptions-item-colon {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.barcode-label {
+    border: 1px solid black;
+    padding: 0 2px 2px 2px;
+    border-style: dashed;
+    width: 384px;
+    height: 192px;
+    max-width: 384px;
+    max-height: 192px;
+}
+
+.barcode-lines .ant-descriptions-item-content {
+    line-height: 0;
+}
+
+.barcode-column-width-100 {
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+.barcode-column-width-75 {
+    width: 75%;
+    /* overflow: hidden; */
+}
+
+.barcode-column-width-50 {
+    width: 50%;
+    /* overflow: hidden; */
+}
+
+.barcode-column-width-25 {
+    width: 25%;
+    /* overflow: hidden; */
+}
+
+.barcode-label .ant-descriptions-item-content {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.barcode-label .ant-descriptions-row td>* {
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.barcode-label .ant-descriptions-item-content {
+    color: #000;
+    font-size: 12px;
+}
+
+.barcode-label .border-font-20 .ant-descriptions-item-content {
+    min-width: 35px;
+    text-align: center;
+    border: 2px solid #000;
+    font-size: 14px;
+    font-weight: 500;
+    height: 25px;
+}
+
+.qr-code {
+    height: 112px !important;
+    width: 112px !important;
+    padding-top: 0px !important;
+
+}
+.barcode-container {
+    border-style: dashed ;
+    border-width: 1px;
+    /* Other border properties */
+  }
+
+@media print {
+    @page barcode-label {
+        margin: 0;
+    }
+
+    div.barcode-label {
+        page: barcode-label;
+    }
+
+    .barcode-label {
+        page-break-after: always !important;
+    }
+
+    .barcode-label:last-of-type {
+        page-break-after: auto !important;
+    }
+}

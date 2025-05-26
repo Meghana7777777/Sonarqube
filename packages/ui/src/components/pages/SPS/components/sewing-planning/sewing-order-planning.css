@@ -1,0 +1,110 @@
+.sewing-order-planning-main-container {
+    /* background-color: white; */
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1); */
+}
+
+.modules-conatiner {
+    display: flex;
+}
+
+.modules-card {
+    height: 200px;
+    width: 200px;
+}
+
+
+.job-order-container {
+    min-height: 250px;
+    max-height: 600px;
+    position: sticky;
+    top: 65px;
+    background-color: rgb(235, 235, 235);
+    /* box-shadow: 0 4px 8px rgb(0,0,0,0.1); */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.legend-container {
+    background-color: white;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1);
+    /* margin-bottom: 10px; */
+    border-radius: 10px;
+    width: 50%;
+    height: 40px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+
+.job-order-date {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.job-order-main-container {
+    background-color: white;
+    border-radius: 7px;
+    text-align: center;
+    padding: 10px;
+}
+
+.job-card-title {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    display: block;
+}
+
+.module-job-order-card {
+    margin: 5px;
+    width: 108px;
+    height: 25px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* :where(.css-dev-only-do-not-override-1dz9pwy).ant-tooltip {
+    width: fit-content;
+    --antd-arrow-background-color: rgba(255, 255, 255, 0.85);
+} */
+
+
+
+.custom-tooltip {
+    width: 434px !important; /* Ensure this takes precedence */
+    max-width: none !important; /* Override Ant Design's default styles */
+  }
+  
+  .custom-tooltip .ant-tooltip-inner {
+    width: 100%; /* Ensures the content spans the full width */
+  }
+  
+  .custom-tooltip .ant-tooltip-arrow {
+    left: 10%; /* Adjust arrow alignment if necessary */
+  }
+  

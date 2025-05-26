@@ -1,0 +1,68 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/services/emb-tracking",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/services/emb-tracking",
+        "main": "packages/services/emb-tracking/src/main.ts",
+        "tsConfig": "packages/services/emb-tracking/tsconfig.app.json",
+        "assets": [
+          "packages/services/emb-tracking/src/assets",
+          "packages/services/emb-tracking/.env"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/services/emb-tracking/src/environments/environment.ts",
+              "with": "packages/services/emb-tracking/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "services-emb-tracking:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "services-emb-tracking:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/services/emb-tracking/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/services/emb-tracking"
+      ],
+      "options": {
+        "jestConfig": "packages/services/emb-tracking/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

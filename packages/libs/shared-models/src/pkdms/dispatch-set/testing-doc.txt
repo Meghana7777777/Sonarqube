@@ -1,0 +1,131 @@
+SELECT * FROM xpparel_cps.po_docket_lay WHERE docket_group IN (
+	SELECT docket_group FROM xpparel_cps.`po_docket` WHERE docket_number IN (
+		SELECT ref_docket_number FROM xpparel_cps.po_cut WHERE po_serial = 10
+	)	
+)
+
+
+SELECT * FROM xpparel_cps.po_cut WHERE po_serial = 10 AND ref_docket_number IN (
+	SELECT docket_number FROM xpparel_cps.`po_docket` WHERE docket_group IN (
+		SELECT docket_group FROM xpparel_cps.po_docket_lay WHERE po_serial = 10
+	)
+)
+
+
+
+SELECT * FROM xpparel_oes.`po_ratio` WHERE id IN (220, 222, 223);
+
+SELECT * FROM xpparel_cps.`po_docket` WHERE docket_group IN (
+	SELECT docket_group FROM xpparel_cps.po_docket_lay WHERE po_serial = 10
+)	
+
+
+// gte cut info for cut id
+{
+  "username": null,
+  "unitCode": "B3",
+  "companyCode": "5000",
+  "userId": 0,
+  "cutIds": [ 129 ],
+  "iNeedDockets": true,
+  "iNeedActualDockets": true,
+  "iNeedDocketSize": false,
+  "iNeedActualDocketSize": false,
+  "iNeedDocketBundles": true,
+  "iNeedActualBundles": true
+}
+
+
+// creating dispacth set
+{
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "username": "rajesh",
+    "setItems": [
+        {
+            "itemRefNos": ["129"],
+            "plannedItemContainers": [
+                {
+                    "itemRefNo": "122",
+                    "containerType": "BAG",
+                    "containerNos": [1,2,3],
+                    "remarks": "Cut 1 Bags"
+                },
+                {
+                    "itemRefNo": "123",
+                    "containerType": "BAG",
+                    "containerNos": [1,2,3],
+                    "remarks": "Cut 2 Bags"
+                }
+            ],
+            "remarks": "Manual cut"
+        }
+    ],
+    "remarks": "D2 DEV TEST"
+}
+
+
+
+// delete or get request
+{
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "dSetPks": [2],
+    "remarks": "some",
+    "iNeedItemsAlso": true,
+    "iNeedSubItemsAlso": true,
+    "iNeedContainersAlso": true,
+    "iNeedItemAttrAlso": true
+}
+
+
+// DSetFilterRequest
+// delete or get request
+{
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "manufacturingOrderNumbers": [566],
+    "remarks": "some",
+    "iNeedItemsAlso": true,
+    "iNeedSubItemsAlso": true,
+    "iNeedContainersAlso": true,
+    "iNeedItemAttrAlso": true
+}
+
+
+// delete shipping request
+{
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "username": "rajesh",
+    "srId": [7],
+    "remarks": "some"
+}
+
+
+
+// shipping req id request
+{
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "username": "rajesh",
+    "srIds": [7],
+    "remarks": "some",
+    "iNeedVendorInfoAlso": false,
+    "iNeedTruckInfoAlso": false,
+    "iNeedSrItemsAlso": true,
+    "iNeedSrItemsAttrAlso": true
+}
+
+// shipping req filter request
+{
+    "unitCode": "B3",
+    "companyCode": "5000",
+    "username": "rajesh",
+    "manufacturingOrderPks": ["566"],
+    "proceedingStatus": [],
+    "iNeedVendorInfoAlso": false,
+    "iNeedTruckInfoAlso": false,
+    "iNeedSrItemsAlso": false,
+    "iNeedSrItemsAttrAlso": false,
+}
